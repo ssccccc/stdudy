@@ -37,8 +37,8 @@ else
 }
 
 
-alert (thousands_separators(100));
-alert (thousands_separators(1000));
+alert(thousands_separators(100));
+alert(thousands_separators(1000));
 alert(thousanda_separators(1000000));
 alert(thousands_separators(1000.0));
 alert(thousands_separators(100.2342));
