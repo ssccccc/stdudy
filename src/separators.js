@@ -4,8 +4,8 @@
 function thousands_separators(num)
 {
 	var str=num.toString();
-	var nStr += ''; 
-        var x = nStr.split('.');
+        str += ''; 
+        var x = str.split('.');
         var x1 = x[0], x2 = x.length > 1 ? '.' + x[1] : '';
         var rgx = /(\d+)(\d{3})/; 
         while (rgx.test(x1)) 
