@@ -2,44 +2,17 @@
 'use strict';
 
 function thousands_separators(num)
-{var str=num.toString();
-var newStr = "";
-var count = 0;
+{
+	var str=num.toString();
+	var nStr += ''; 
+        var x = nStr.split('.');
+        var x1 = x[0], x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/; 
+        while (rgx.test(x1)) 
+        {  x1 = x1.replace(rgx, '$1' + ',' + '$2'); }
+        return (x1 + x2);
 
-if(str.indexOf(".")==-1)
-{
-   for(var i=str.length-1;i>=0;i--)
-   {
- 	if(count % 3 == 0 && count != 0)
-	{
-   		newStr = str.charAt(i) + "," + newStr;
-        }
-      else
-        {
-   		newStr = str.charAt(i) + newStr;
-        }
-    count++;
-  }
-   
-}
-else
-{
-    for(var i = str.indexOf(".")-1;i>=0;i--)
-  {
-     if(count % 3 == 0 && count != 0)
-     {
-   	newStr = str.charAt(i) + "," + newStr;
-     }
-    else
-     {
-   	newStr = str.charAt(i) + newStr; 
-     }
- 	count++;
-  }
-   str = newStr + (str + "00").substr((str + "00").indexOf("."),3);
-  
-}
-	
+
 }
 
 
